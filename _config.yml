@@ -11,8 +11,8 @@ description: |
 owner: Vinh Tran # or company name
 first_published: 2017 # if migrating another site, the year of your first publish
 email: trvinh@gmail.com
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://trvinh.github.io/index.html" # the base hostname & protocol for your site
+baseurl: "/blog" # the subpath of your site, e.g. /blog
+url: "https://trvinh.github.io" # the base hostname & protocol for your site
 social:
   github: https://github.com/trvinh
 #  linkedin-square: https://linkedin.com/in/<username>
