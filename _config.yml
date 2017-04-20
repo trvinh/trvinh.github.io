@@ -1,8 +1,8 @@
 locale: "en-US"
-title: Strata # Title of your site
-url: "https://trvinh.github.io" # the base hostname & protocol for your site
+title: TnV Blog # Title of your site
+url: https://trvinh.github.io # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog/
-#google_analytics_key: ""
+google_analytics_key: UA-97697810-1
 
 # Default description in social shares for the jekyll-seo-tag gem
 description: > # this means to ignore newlines until "baseurl:"
@@ -14,13 +14,12 @@ description: > # this means to ignore newlines until "baseurl:"
 author:
   name: Vinh Tran
   email: trvinh@gmail.com
-  twitter: # twitter username without the @ symbol
 
 # Social details for the jekyll-seo-tag gem
 social:
   name: TnV Blog
   links:
-    - https://github.com/trvinh
+    - https://trvinh.github.io
 
 permalink: pretty
 
