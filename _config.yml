@@ -22,11 +22,11 @@ github_username:  trvinh20
 # Build settings
 permalink: /blog/:year/:month/:day/:title
 markdown: kramdown
-theme: minima
+theme: jekyll-theme-modernist
 gems:
   - jekyll-feed
 exclude:
   - Gemfile
   - Gemfile.lock
 
-pygments: true
+#pygments: true
