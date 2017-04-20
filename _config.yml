@@ -1,58 +1,12 @@
-# Welcome to Jekyll!
-#
-
 # Site settings
-title: TnV Blog
-description: |
-  Ghi desc cho trang web o day nhe
-  Another fine responsive
-  site template freebie
-  crafted by [HTML5 UP](http://html5up.net)
-owner: Vinh Tran # or company name
-first_published: 2017 # if migrating another site, the year of your first publish
+title: TnV's blog
 email: trvinh@gmail.com
-baseurl: "/blog" # the subpath of your site, e.g. /blog
-url: "https://trvinh.github.io" # the base hostname & protocol for your site
-social:
-  github: https://github.com/trvinh
-#  linkedin-square: https://linkedin.com/in/<username>
-  facebook-official: https://facebook.com/tnvphotography
-  #email: /contact/
-  #flickr:
-  #instagram:
-  #youtube-square:
-  #spotify:
-  #stack-overflow:
-  #vimeo:
-  #reddit:
-  #stubleupon:
-  #delicious:
-  #pied-piper:
-  #digg:
-  #soundcloud:
-  #deviantart:
-  #angellist:
-  #tumblr-square:
-  #stackexchange:
-  #weibo:
-  #trello:
-  #foursquare:
-  #linux:
-  #bitbucket-square:
-  #vk:
-  #slack:
-  #vine:
-  #weixin:
-  #yelp:
-  #skyatlas:
-  #leanpub:
-  #connectdevelop:
-  #ils:
-  #forumbee:
-  #tripadvisor:
-  #amazon:
+description: > # this means to ignore newlines until "baseurl:"
+baseurl: "/blog/" # the subpath of your site, e.g. /blog/
+url: "https://trvinh.github.io/" # the base hostname & protocol for your site
+
+twitter_username:
+github_username: trvinh
 
 # Build settings
 markdown: kramdown
-#sass:
-#  style: compressed
