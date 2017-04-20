@@ -27,7 +27,7 @@ github_username:  trvinh
 
 # Build settings
 markdown: kramdown
-theme: modernist
+theme: minima
 gems:
   - jekyll-feed
 exclude:
