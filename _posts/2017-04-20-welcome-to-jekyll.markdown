@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: front
 title:  "Welcome to Jekyll!"
 date:   2017-04-20 14:30:18 +0200
 #categories: jekyll update
