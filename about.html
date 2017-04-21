@@ -1,9 +1,10 @@
 ---
 layout: post
-title: Archive
-permalink: /archive/
+title: About me
+permalink: /about/
 ---
 <section class="archive-post-list">
+  <h4> ABOUT ME
   {% for post in site.posts %}
       {% assign currentDate = post.date | date: "%Y" %}
       {% if currentDate != myDate %}
