@@ -13,7 +13,7 @@ By utilizing the NCBI taxonomy, input taxa can be dynamically collapsed into hig
 
 Profiles can be filtered dynamically according to various criteria. For example, setting a minimal threshold for the fraction of species in a systematic group, or filtering collections of orthologs based on the pre-computed similarity of their domain architectures - if provided as an information layer.
 
-[Click here to watch demo video](https://youtu.be/Udt316KoM6Y)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Udt316KoM6Y" frameborder="0" allowfullscreen></iframe>
 
 # Demo data
 
