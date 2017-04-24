@@ -8,6 +8,6 @@ date: 2017-04-20
 
 [PhyloProfile](https://trvinh.github.io/phyloprofile/) is my very first [R](https://www.r-project.org/about.html) application. During my PhD project, I had to find a way to represent a big phylogenetic profile of more than 1500 [Microspodiria](https://de.wikipedia.org/wiki/Microsporidia) proteins. Plotting a traditional phylogenetic profile, a 0/1 matrix basically, is not an issue any more. However, my problem was, that I need to show more information beside those 0 and 1 in order to make the plot more informative.
 
-My best colleague, [Bastian](https://github.com/gedankenstuecke) - the guy who knows everything, gave me a great idea about using [Shiny](https://shiny.rstudio.com) to play with dynamic and interactive plots. The more I use Shiny, the more R surprises me about its ability. It's been giving me an enthusiasm for learning this interesting language :)
+My best colleague, [Bastian](https://github.com/gedankenstuecke) - the guy who knows everything, gave me a great idea about using [Shiny](https://shiny.rstudio.com) to play with dynamic and interactive plots. The more I use Shiny, the more R surprises me about its ability. It's been giving me an enthusiasm for exploring this interesting language :)
 
 So, now I'm learning to say rrrrrrrRRRRRRRrrrrrrr......!!!

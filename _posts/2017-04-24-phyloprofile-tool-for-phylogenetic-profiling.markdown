@@ -59,9 +59,8 @@ Therefore bug reports, comments, suggestions are highly appreciated ;)
 
 # Acknowledgement
 I would like to thank
-1) [Bastian](https://github.com/gedankenstuecke) for the great initial idea and his kind support,
-2) Members of [Ebersberger group](http://www.bio.uni-frankfurt.de/43045195/ak-ebersberger) for many valuable suggestions and ...bug reports :)
+1. [Bastian](https://github.com/gedankenstuecke) for the great initial idea and his kind support,
+2. Members of [Ebersberger group](http://www.bio.uni-frankfurt.de/43045195/ak-ebersberger) for many valuable suggestions and ...bug reports :)
 
 # Contact
-Vinh Tran
-tran@bio.uni-frankfurt.de
+[Vinh Tran](mailto:tran@bio.uni-frankfurt.de)
