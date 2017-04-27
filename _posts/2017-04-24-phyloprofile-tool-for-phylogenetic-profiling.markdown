@@ -17,9 +17,8 @@ Profiles can be filtered dynamically according to various criteria. For example,
 
 # Demo data
 
-I put some test data in the [github repository](https://github.com/trvinh/phyloprofile) to demonstrate how this tool works.
+I put some test data in `data/demo` in the [github repository](https://github.com/trvinh/phyloprofile) to demonstrate how this tool works.
 
-In `data/demo/` you can find some test data:
 - `test.main`: Use this as the **Main input** file on the *Input & settings* page after starting *PhyloProfile*. It contains 3 information: `Ortholog ID # Feature architecture similarity score # Traceability score`.
 - `test.main.long`: This is the same as `test.main` but in long format.
 - `test.architecture`: This contains the feature architecture data (e.g. Pfam domains) that you can optionally give under the **Additional annotation file** upload on the *Input & settings* page after startup.
