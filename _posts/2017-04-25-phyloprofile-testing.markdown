@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title: PhyloProfile, Testing
 date: 2017-04-24
 ---

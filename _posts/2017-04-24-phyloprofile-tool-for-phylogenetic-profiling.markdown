@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title: PhyloProfile, (R)Tool for phylogenetic profiling
 date: 2017-04-24
 ---
