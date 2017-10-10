@@ -4,63 +4,103 @@ comments: true
 title: PhyloProfile, (R)Tool for phylogenetic profiling
 date: 2017-04-24
 ---
-<img src="/images/phyloprofile/pic_main.png" class="fit image">
+<img src="/images/phyloprofile/posterSub.png" class="fit image">
 
-[PhyloProfile Tool](https://github.com/trvinh/phyloprofile "Goto github project page") is a Shiny(R)-based tool for integrating, visualizing and exploring multi- layered phylogenetic profiles
+[![language: R](https://img.shields.io/badge/language-R-blue.svg?style=flat)](https://www.r-project.org/)
+[![presented at: BOSC2017](https://img.shields.io/badge/presented%20at-BOSC2017-green.svg?style=flat)](https://f1000research.com/posters/6-1782)
+[![GitHub release](https://img.shields.io/badge/stable%20release-v0.1.0-orange.svg)](https://github.com/BIONF/PhyloProfile/releases/tag/v0.1.0)
+[![license: MIT](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://opensource.org/licenses/MIT)
 
-Alongside the presence/absence pattern of orthologs across large taxon collections, PhyloProfile allows the integration of any two additional information layers. These complementary data, e.g. sequence similarity between orthologs, similarities and differences of their domain architectures or their Gene Ontology-term-based semantic similarities, etc. will enable a more reliable functional inference among those orthologous sequences.
+<a href="https://github.com/BIONF/phyloprofile" target="_blank">*PhyloProfile*</a>
+is a *Shiny*-based tool for integrating, visualizing and exploring multi-layered phylogenetic profiles.
 
-By utilizing the NCBI taxonomy, input taxa can be dynamically collapsed into higher order systematic groups. By that you can rapidly change the resolution from the comparative analyses of proteins in individual species to that of entire kingdoms or even domains without the need of input data modification.
+Alongside the presence/absence patterns of orthologs across large taxon collections, *PhyloProfile* allows the integration of any two additional information layers. These complementary data, like sequence similarity between orthologs, similarities in their domain architecture, or differences in functional annotations enable a more informed interpretation of phylogenetic profiles.
 
-Profiles can be filtered dynamically according to various criteria. For example, setting a minimal threshold for the fraction of species in a systematic group, or filtering collections of orthologs based on the pre-computed similarity of their domain architectures - if provided as an information layer.
+By utilizing the NCBI taxonomy, *PhyloProfile* can dynamically collapse taxa into higher systematic groups. This enables rapidly changing the resolution from the comparative analyses of proteins in individual species to that of entire kingdoms or even domains without changes to the input data.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Udt316KoM6Y" frameborder="0" allowfullscreen></iframe>
+*PhyloProfile* furthermore allows for a dynamic filtering of profiles – taking the taxonomic distribution and the additional information layers into account. This, along with functions to estimate the age of genes and core gene sets facilitates the exploration and analysis of large phylogenetic profiles.
 
-# Demo data
+<a href="https://phyloprofile.shinyapps.io/phyloprofile/" target="_blank">Explore the installation-free online version</a>
+or
+<a href="https://vimeo.com/225373912" target="_blank">watch the demo video</a>
+to learn more.
 
-I put some test data in `data/demo` in the [github repository](https://github.com/trvinh/phyloprofile) to demonstrate how this tool works.
+# Table of Contents
+- [Installation & Usage](#installation--usage)
+- [Input Data](#input-data)
+  * [OrthoXML](#orthoxml)
+    + [OMA Standalone](#oma-standalone)
+    + [OMA Browser](#oma-browser)
+  * [Your tool is missing?](#your-tool-is-missing)
+  * [Demo data](#demo-data)
+- [Bugs](#bugs)
+- [Acknowledgements](#acknowledgements)
+- [Contact](#contact)
 
-- `test.main`: Use this as the **Main input** file on the *Input & settings* page after starting *PhyloProfile*. It contains 3 information: `Ortholog ID # Feature architecture similarity score # Traceability score`.
-- `test.main.long`: This is the same as `test.main` but in long format.
-- `test.architecture`: This contains the feature architecture data (e.g. Pfam domains) that you can optionally give under the **Additional annotation file** upload on the *Input & settings* page after startup.
-<img src="/images/phyloprofile/pic_input.png" class="fit image">
-- `test.taxaList`: This contains list of taxon names. Use this to test the function of fetching NCBI taxonomy IDs, which can be found in *More* tab.
-<img src="/images/phyloprofile/pic_customized.png" class="fit image">
-- `test.geneList`: After doing the initial plot with the files above you can use this file on the *Customized profile* tab to sub-select for only the genes present in this file.
-<img src="/images/phyloprofile/pic_taxaIDsearch.png" class="fit image">
+# Installation & Usage
+*PhyloProfile* is based on the *R*-package *Shiny*, as such a recent version of *R* is needed. Once that is out of the way you can just clone this repository to get a copy of *PhyloProfile*.
 
+`git clone https://github.com/BIONF/phyloprofile`
 
-# Usage
-(1) Clone the git repository to your computer using this command:
+To start PhyloProfile simply move into the PhyloProfile directory and run the main script
 
->git clone https://github.com/trvinh/phyloprofile
+```
+cd PhyloProfile
+Rscript phyloprofile.R
+```
 
-OR
+The initial start can take a while, as `phyloprofile.R` will try do download and install all necessary dependencies automatically. *(Note: Depending on your system this sometimes fails, please check the console log for error messages concerning the dependency installation)*
 
-Manually download all the files to your computer and keep the original folder structure.
+Once all packages are downloaded and installed your web browser will open a new tab and display the main *PhyloProfile* menu.
 
-(2) Install dependent R packages:
+# Input Data
+*PhyloProfile* can read a number of different input files, including regular tab-separated files and *OrthoXML*. The additional information layers can be embedded in the OrthoXML or be provided separately.
 
->Rscript installPackages.R
+## OrthoXML
+*PhyloProfile* is capable of reading in files in the [*standardized OrthoXML format*](http://www.orthoxml.org/xml/Main.html), as e.g. generated by *Inparanoid* or [*OMA Standalone*](http://omabrowser.org/standalone/). *PhyloProfile* expects [the *NCBI taxonomy IDs*](https://www.ncbi.nlm.nih.gov/taxonomy) to be present in the `species` tag in the XML as `NCBITaxId` like this:
 
-(3) Run PhyloProfile tool:
+`<species name="Dipodomys ordii" NCBITaxId="10020">`
 
->R -e 'shiny::runApp(,launch.browser=TRUE)'
+### OMA Standalone
+By default, the output of [*OMA Standalone*](http://omabrowser.org/standalone/) does not include the correct `NCBITaxId` (c.f. `data/demo/oma_example.orthoxml`) but rather gives these as `<species name="Dipodomys_ordii" NCBITaxId="-1">`. With `scripts/convert_oma_standalone_orthoxml.py` we provide a basic Python script to enable the use of *OMA Standalone*.
 
-(or open and run server.R / ui.R using RStudio)
+Besides the *OrthoXML* of *OMA Standalone* it only requires a simple, tab-separated mapping-file that maps the species names as generated by *OMA Standalone* to the *NCBI Taxonomy ID*. *OMA Standalone* uses the filenames of the protein sets you put into the `DB` folder as the species names, with `Dipodomys_ordii.fa` being transformed into the species name `Dipodomys_ordii`. An example mapping file should look like this:
+```
+$ head -n 3 data/demo/taxon_mapping_oma_orthoxml.csv
+Dipodomys_ordii	10020
+Mus_musculus	10090
+Rattus_norvegicus	10116
+```
 
-NOTE: R and Rscript has to be installed on your machine.
+To convert the *OrthoXML* of *OMA Standalone* to a PhyloProfile compatible *OrthoXML* you can simply run
 
-NOTE NOTE: sometimes some packages cannot be automatically installed. Please so kind to check on the terminal if any error messages exist and try to install those packages manually.
+`./scripts/convert_oma_standalone_orthoxml.py -x data/demo/oma_example.orthoxml -m data/demo/taxon_mapping_oma_orthoxml.csv > data/demo/oma_example_phyloprofile_compatible.orthoxml`
+
+### OMA Browser
+If you prefer to use precalculated *Hierarchical Orthologous Groups* (HOGs) from the [*OMA Browser*](http://omabrowser.org/oma/home/) you can download your HOGs of interest right away from the commandline. To this end we provide `scripts/get_oma_hogs.py`. The input for this script is a list of *OMA* protein IDs (e.g. `RATNO03710`) or *Uniprot* IDs (e.g. `P53_HUMAN`). The types of IDs can be mixed.
+
+Running
+
+`./scripts/get_oma_hogs.py -i RATNO03709 RATNO03710 RATNO03711 P53_HUMAN`
+
+will yield a single, merged *OrthoXML* files that contains the four *HOGs* for the corresponding proteins.
+
+## Your tool is missing?
+Please get in touch! we are trying to support more orthology prediction tools right out of the box.
+
+## Demo data
+In `data/demo/` you can find some test data to see how the files should look like. In our [Wiki you can find a walkthrough through the different files](https://github.com/BIONF/PhyloProfile/wiki/Walkthrough) and how they relate to the different functions of *PhyloProfile*.
 
 # Bugs
-Since I'm still a newbie in R, this tool has not only wheat but also bugs :D
-Therefore bug reports, comments, suggestions are highly appreciated ;)
+Any bug reports or comments, suggestions are highly appreciated. Please open an issue on GitHub or be in touch via email.
 
-# Acknowledgement
-I would like to thank
-1. [Bastian](https://github.com/gedankenstuecke) for the great initial idea and his kind support,
-2. Members of [Ebersberger group](http://www.bio.uni-frankfurt.de/43045195/ak-ebersberger) for many valuable suggestions and ...bug reports :)
+# Acknowledgements
+We would like to thank
+1) [Bastian](https://github.com/gedankenstuecke) for the great initial idea and his kind support,
+2) Members of [Ebersberger group](http://www.bio.uni-frankfurt.de/43045195/ak-ebersberger) for many valuable suggestions and ...bug reports :)
+
+# Code of Conduct & Lisence
+This tool is released with a [Contributor Code of Conduct](https://github.com/BIONF/PhyloProfile/blob/master/CODE_OF_CONDUCT.md) & under [MIT lisence](https://github.com/BIONF/PhyloProfile/blob/master/LICENSE).
 
 # Contact
 [Vinh Tran](mailto:tran@bio.uni-frankfurt.de)
