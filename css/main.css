@@ -2470,6 +2470,7 @@
 		text-align: right;
 		top: 0;
 		width: 35%;
+		opacity: 0.9;
 	}
 
 		#header strong, #header b {
@@ -3164,3 +3165,171 @@
  	.cms-editor-active .editor-link {
  		display: inline-block;
  	}
+
+	/* Timeline from https://codepen.io/vysocina/pen/jyYEjp */
+	@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
+	* {
+		pading: 0;
+		margin: 0;
+		font-family: "Lato", sans-serif;
+		position: relative;
+	}
+
+	.timeline {
+		padding: 40px 0px;
+		width: 80%;
+		margin-left: 5%;
+		margin-bottom: 10%;
+	}
+	/* LINE */
+	.timeline:before {
+		content: "";
+		position: absolute;
+		top: 0px;
+		left: 65px;
+		width: 3px;
+		height: calc(100% - 80px);
+		background: #999999;
+	}
+	/* content column*/
+	.timeline .column {
+		margin: 0px 40px 40px 120px;
+	}
+
+	.timeline .column .title h1 {
+		font-size: 80px;
+		color: rgba(0,0,0,0.1);
+		font-family: serif;
+		letter-spacing: 3px;
+	}
+
+	/* DOT on time line */
+	.timeline .column .title h1:before {
+		content: "";
+		position: absolute;
+		left: -73px;
+		top: 40px;
+		width: 10px;
+		height: 10px;
+		background: #fff;
+		border: 20px solid #c66055;
+		border-radius: 100%;
+	}
+
+	.timeline .column .title h2 {
+		margin-top: -60px;
+		font-size: 28px;
+	}
+
+	.timeline .column .title h3 {
+		margin-top: -0px;
+		font-size: 18px;
+	}
+
+	.timeline .column .description p {
+		font-size: 13px;
+		line-height: 20px;
+		margin-left: 20px;
+		margin-top: 10px;
+		font-family: serif;
+	}
+
+	/*.timeline .column .description {
+		border-left: 1px solid #000;
+	}*/
+
+	/* header style */
+	.main {
+		width: 80%;
+		margin-left: 10%;
+		margin-top: 50px;
+	}
+
+	.main h1 {
+		font-size: 50px;
+		/*line-height: 60px;*/
+	}
+
+	.main p {
+		font-size: 13px;
+		/*line-height: 20px;*/
+		font-family: serif;
+		text-align: right;
+		margin-right: 100px;
+	}
+
+	/* Skill bar by http://design.bi/gallery/simple-c-vitae-free-resume/ */
+	.competences {
+		padding: 40px 0px;
+		width: 80%;
+		margin-left: 10%;
+	}
+
+	.competences h1 {
+		font-size: 50px;
+		/*line-height: 60px;*/
+	}
+
+	.competences .barres {
+		margin-left: 60px;
+		margin-bottom: -10%;
+	}
+
+	.competences .barres p {
+		margin-bottom: 10px;
+		position: relative;
+		width: 50%;
+	}
+
+	.competences .barres p:after {
+		background: #e1e1e1;
+		bottom: -4px;
+		content: ' ';
+		display: block;
+		height: 5px;
+		position: absolute;
+		width:100%;
+	}
+
+	.competences .barres p span {
+		background: #33a4c9;
+		bottom: -4px;
+		content: ' ';
+		display: block;
+		height: 5px;
+		left: 0;
+		position: absolute;
+		width: inherit;
+		z-index: 1;
+	}
+
+	.competences .barres p content {
+		font-family: "Lato", sans-serif;
+		font-size: 28;
+		left: inherit;
+	}
+
+	/* style for ABOUT introduction */
+	.intro {
+		padding: 40px 0px;
+		width: 80%;
+		margin-top: -10%;
+		margin-left: 10%;
+		margin-bottom: -10%;
+	}
+
+	.intro h1 {
+		font-size: 50px;
+	}
+
+	.intro p {
+		font-family: "Lato", sans-serif;
+		font-size: 28;
+	}
+
+	.intro main {
+		font-size: 80px;
+		color: rgba(0,0,0,0.1);
+		letter-spacing: 3px;
+		font-family: "Lato", sans-serif;
+	}

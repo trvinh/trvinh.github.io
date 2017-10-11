@@ -6,6 +6,10 @@
   link: 'https://www.facebook.com/tnvphotography'
   social_icon: Facebook
   new_window: true
+- name: Twitter
+  link: 'https://twitter.com/trvinh_'
+  social_icon: Twitter
+  new_window: true
 - name: Instagram
   link: 'https://www.instagram.com/trvinh20'
   social_icon: Instagram
