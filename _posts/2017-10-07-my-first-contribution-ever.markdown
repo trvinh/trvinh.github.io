@@ -9,7 +9,7 @@ date: 2017-10-07
 
 Yuppiiii!!! You know how you feel, when your work is getting recognized, right? ;)
 
-Some time back, I was working on an issue with *- yes, again -* with [PhyloProfile]({% post_url 2017-04-24-phyloprofile-tool-for-phylogenetic-profiling %}), where I need to sort a list of taxa based on their taxonomy distance. From [Bastian](https://twitter.com/gedankenstuecke) - the guy who knows everything, I got to know [*taxize*](https://github.com/ropensci/taxize), a greate library from [rOpenSci project](https://ropensci.github.io) for playing with NCBI taxonomy database. *taxize* has a function called `class2tree()` which create a tree object from a given list of species.
+Some time back, I was working on an issue with *- yes, again -* with [PhyloProfile]({% post_url 2017-04-24-phyloprofile-tool-for-phylogenetic-profiling %}), where I need to sort a list of taxa based on their taxonomy distance. From <a href="https://twitter.com/gedankenstuecke" target="_blank">Bastian</a> - the guy who knows everything, I got to know <a href="https://github.com/ropensci/taxize" target="_blank">*taxize*</a>, a greate library from <a href="https://ropensci.github.io" target="_blank">rOpenSci project</a> for playing with NCBI taxonomy database. *taxize* has a function called `class2tree()` which create a tree object from a given list of species.
 
 ```{r}
 >library(taxize)
@@ -35,7 +35,7 @@ This tree has many unresolved splits, since `class2tree()` remove all *unrank* l
 
 ```{r}
 > out$Homo_sapiens
-                   name         rank      id
+name         rank      id
 1    cellular organisms      no rank  131567
 2             Eukaryota superkingdom    2759
 3          Opisthokonta      no rank   33154
@@ -68,13 +68,13 @@ This tree has many unresolved splits, since `class2tree()` remove all *unrank* l
 30                 Homo        genus    9605
 31         Homo sapiens      species    9606
 ```
-Bastian opened an [issue](https://github.com/ropensci/taxize/issues/611#issuecomment-328168051) in *taxize* github repository. At that time, I could already solve the issue (*mostly*) with my Perl code. But while writing the manuscript for [PhyloProfile](https://f1000research.com/posters/6-1782), we decided to convert the Perl code into R, so that we don't have many scripts in many different languages in one program :-D
+Bastian opened an <a href="https://github.com/ropensci/taxize/issues/611#issuecomment-328168051" target="_blank">issue</a> in *taxize* github repository. At that time, I could already solve the issue (*mostly*) with my Perl code. But while writing the manuscript for <a href="https://f1000research.com/posters/6-1782" target="_blank">PhyloProfile</a>, we decided to convert the Perl code into R, so that we don't have many scripts in many different languages in one program :-D
 
-Eventually, I've not only improved the sorting result while implementing the algorithm in R (by using [APE tree object](https://www.rdocumentation.org/packages/ape/versions/4.1)), but I could also rewrite the `class2tree()` function to include the full taxonomy information for creating the species tree. By that I can sucessfully reconstruct the NCBI taxonomy tree, yahooo!!
+Eventually, I've not only improved the sorting result while implementing the algorithm in R (by using <a href="https://www.rdocumentation.org/packages/ape/versions/4.1" target="_blank">APE tree object</a>), but I could also rewrite the `class2tree()` function to include the full taxonomy information for creating the species tree. By that I can sucessfully reconstruct the NCBI taxonomy tree, yahooo!!
 
 <img src="/images/taxize/tree_mod.png" style="width:454px;height:328px;">
 
-Bastian and I made a [pull request](https://github.com/ropensci/taxize/pull/634) in *taxize*. He helped me to run the tests they require. And finally, my [code](https://gist.github.com/trvinh/6208c21b409a776892a37333a686387b) & our effort have been accepted ^_^
+Bastian and I made a <a href="https://github.com/ropensci/taxize/pull/634" target="_blank">pull request</a> in *taxize*. He helped me to run the tests they require. And finally, my <a href="https://gist.github.com/trvinh/6208c21b409a776892a37333a686387b" target="_blank">code</a> & our effort have been accepted ^_^
 
 <blockquote class="twitter-tweet" data-lang="de"><p lang="en" dir="ltr">🎉 to <a href="https://twitter.com/trvinh_?ref_src=twsrc%5Etfw">@trvinh_</a> for his first contribution to an open source package! 🍾 <a href="https://t.co/PfGF22kvLy">https://t.co/PfGF22kvLy</a></p>&mdash; Bastian Greshake (@gedankenstuecke) <a href="https://twitter.com/gedankenstuecke/status/916569912851812353?ref_src=twsrc%5Etfw">7. Oktober 2017</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
