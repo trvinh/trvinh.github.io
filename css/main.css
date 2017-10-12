@@ -3278,7 +3278,7 @@
 	.competences .barres p {
 		margin-bottom: 10px;
 		position: relative;
-		width: 50%;
+		width: 400px;
 	}
 
 	.competences .barres p:after {
