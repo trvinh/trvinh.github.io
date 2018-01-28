@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title: Getting started with git
+title: Getting started with git and GitHub
 date: 2018-01-10
 ---
 
@@ -36,5 +36,31 @@ After making some changes (edit files, create and remove files), you can check t
 A list of untracked files will be listed. In order to start version-controlling those files, use `$ git add *` (or add only files / file types that you would like to track).
 
 Then you can commit the changes you have made with `$ git commit -m "type some message here"` and update the corresponding GitHub repository by typing `$ git push`.
+
+# Git branching
+[Git branching](https://git-scm.com/book/en/v1/Git-Branching-What-a-Branch-Is) is a "killer feature" in git. You can create another branch of the repository to work without affecting to the main branch (*master branch*), e.g. make some new features, change some function for your own purpose, etc.
+
+To create a new branch called new_function:
+
+`git checkout new_function`
+
+You have made a new pointer at the current commit you are currently on. Now you are working on the *"new_branch"* branch. Making any changes here will not effect to the main *"master"* branch. To commit and push changes to this branch follow the  [instruction above](#commit-changes-and-push-to-github-repositiory).
+
+To change back to the *master* branch (or go to any other branches), use the command:
+
+`git checkout "branch_name"` (e.g. `git checkout master`)
+
+The command `git checkout` without any branch's name will tell which branch you are currently on.
+
+After successfully created new functions for your tool, you can merge the changes in branch *"new_function"* to *"master"* by doing:
+
+```
+git checkout master
+git merge new_function
+```
+
+After everything have been done, *"new_function"* branch will be no longer needed, we can now delete it:
+
+`git branch -d new_function`
 
 *\<to be continued>*
