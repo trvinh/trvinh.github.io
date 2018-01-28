@@ -37,4 +37,4 @@ A list of untracked files will be listed. In order to start version-controlling 
 
 Then you can commit the changes you have made with `$ git commit -m "type some message here"` and update the corresponding GitHub repository by typing `$ git push`.
 
-*\<to be continue>*
+*\<to be continued>*
