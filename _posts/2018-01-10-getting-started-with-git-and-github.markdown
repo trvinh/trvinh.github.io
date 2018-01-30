@@ -5,12 +5,14 @@ title: Getting started with git and GitHub
 date: 2018-01-10
 ---
 
+Table of Contents
+=================
    * [Some background information](#some-background-information)
    * [Basic git commands](#basic-git-commands)
-	 * [Create a repository from the current working directory](#create-a-repository-from-the-current-wo
-rking-directory)
-	 * [Clone a existing repository from GitHub](#clone-a-existing-repository-from-github)
-	 * [Commit changes and push to GitHub repositiory](#commit-changes-and-push-to-github-repositiory)
+      * [Create a repository from the current working directory](#create-a-repository-from-the-current-working-directory)
+      * [Clone a existing repository from GitHub](#clone-a-existing-repository-from-github)
+      * [Commit changes and push to GitHub repositiory](#commit-changes-and-push-to-github-repositiory)
+   * [Git branching](#git-branching)
 
 # Some background information
 <ol>
