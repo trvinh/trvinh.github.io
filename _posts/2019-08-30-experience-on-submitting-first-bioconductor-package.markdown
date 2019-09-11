@@ -1,9 +1,10 @@
 ---
 layout: post
 comments: true
-title: My experience on submitting First Bioconductor package
+title: My experience on submitting the first Bioconductor package
 date: 2019-08-30
 ---
+I am sharing with you here what I have learned and experienced during developing my first [R package - PhyloProfile](https://bioc.ism.ac.jp/packages/devel/bioc/html/PhyloProfile.html) and after successfully submitting it to [Bioconductor](https://www.bioconductor.org) repository.
 
 Table of Contents
 =================
@@ -119,7 +120,7 @@ There are some more approaches to speed up your code, you can find them at:
 # How to create an R package
 This [book of Hadley Wickham](http://r-pkgs.had.co.nz) is an excellent resource for learning about creating an R package. It will guide you from explaining the package structure to describing each individual component of a package that one needs to build. Or this [post](https://masalmon.eu/2017/12/11/goodrpackages/) shows you how to develop a good R package. I suggest you should read it first before starting.
 
-Some important things I have learned and experienced during developing my first [R package](https://bioc.ism.ac.jp/packages/devel/bioc/html/PhyloProfile.html) are:
+Some important things I have learned are:
 * Write good documentation, including [man pages](http://r-pkgs.had.co.nz/man.html) for all the functions and [vignettes](http://r-pkgs.had.co.nz/vignettes.html) for the package. `man` file, or manual for a function, need to be detailed. Beside describing the purpose of the function and meaning of function's parameters (arguments), one needs to give also the data types of input and output, and an (should be runable) example showing the usage of that function. A `vignette` is, different from the `man` files, used for explaining the details of the whole package, as well as for demonstrating some *real* use-cases using the package.
 * Test the functions with `testthat`
 * Use [continuous integration](https://docs.travis-ci.com/user/for-beginners/) (such as [travis-ci](https://travis-ci.com/)) for automatically build and test code changes
@@ -146,3 +147,5 @@ A *valid commit* is recognized by the version of the package. For the first comm
 After being accepted, your package will be available in Bioconductor's git repository. The SSH key you created in step 2 will be used to maintain your package (e.g. bug fix, add new features,...). Make sure that *the email linked to your package* must be the same as the one being shown in your [BioC git profile](https://git.bioconductor.org/BiocCredentials) and it also must be present in your github account (can also be the alternative email).
 
 In some cases, you want to submit a related package (such as an [experiment data package](https://bioconductor.org/packages/release/bioc/vignettes/ExperimentHub/inst/doc/CreateAnExperimentHubPackage.html)), that is located in another GitHub repository. To do that, you just need to post a comment in the current issue like `AdditionalPackage: https://github.com/username/repositoryname`. This must be posted by YOU, the same GitHub user that created the issue. And you also need to [add a webhook](https://github.com/Bioconductor/Contributions#adding-a-web-hook) to that related package, the same as you did for the main package.
+
+That's it! Have fun and good luck with your first contribution ;-)
